@@ -395,7 +395,6 @@
         <ul class="fp-specs">
           <li><span>Bahan</span><span>Cotton Combed 20s</span></li>
           <li><span>cuttingan</span><span>Boxy</span></li>
-          </li>
           <li><span>Sablon</span><span>Plastisol</span></li>
           <li><span>Ukuran</span><span>S · M · L · XL</span></li>
         </ul>
@@ -464,10 +463,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td class="sz">S</td><td>55</td><td>63</td><td>20</td>
-          <tr><td class="sz">M</td><td>57</td><td>65</td><td>21</td>
-          <tr><td class="sz">L</td><td>59</td><td>67</td><td>22</td>
-          <tr><td class="sz">XL</td><td>61</td><td>69</td><td>23</td>
+          <tr><td class="sz">S</td><td>55</td><td>63</td><td>20</td></tr>
+          <tr><td class="sz">M</td><td>57</td><td>65</td><td>21</td></tr>
+          <tr><td class="sz">L</td><td>59</td><td>67</td><td>22</td></tr>
+          <tr><td class="sz">XL</td><td>61</td><td>69</td><td>23</td></tr>
         </tbody>
       </table>
     </div>
@@ -487,32 +486,32 @@
     <div class="order-grid">
       <div>
         <div class="field">
-          <label>Nama Lengkap</label>
+          <label for="f-nama">Nama Lengkap</label>
           <input type="text" id="f-nama" placeholder="Nama kamu">
         </div>
         <div class="field">
-          <label>Nomor WhatsApp</label>
+          <label for="f-wa">Nomor WhatsApp</label>
           <input type="tel" id="f-wa" placeholder="0812xxxxxxx">
         </div>
         <div class="row2">
           <div class="field">
-            <label>Ukuran</label>
+            <label for="f-ukuran">Ukuran</label>
             <select id="f-ukuran">
               <option>S</option><option>M</option><option selected>L</option>
               <option>XL</option>
             </select>
           </div>
           <div class="field">
-            <label>Jumlah</label>
+            <label for="f-jumlah">Jumlah</label>
             <input type="number" id="f-jumlah" min="1" value="1">
           </div>
         </div>
         <div class="field">
-          <label>Alamat Kirim</label>
+          <label for="f-alamat">Alamat Kirim</label>
           <textarea id="f-alamat" rows="3" placeholder="Alamat lengkap + kota"></textarea>
         </div>
         <div class="field">
-          <label>Catatan (opsional)</label>
+          <label for="f-catatan">Catatan (opsional)</label>
           <input type="text" id="f-catatan" placeholder="Contoh: request packing rapi">
         </div>
       </div>
@@ -539,7 +538,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-logo">Neuther®</div>
-      <p><h4>THIS WHERE THE STORY BEGINS</h4> </p>
+      <h4>THIS WHERE THE STORY BEGINS</h4>
       <div class="foot-links">
         <a href="#produk">Produk</a>
         <a href="#cara">Cara PO</a>
@@ -781,6 +780,17 @@ Catatan: ${catatan || '-'}`;
         clearInterval(introTimer);
       }
     }, 220);
+  })();
+</script>
+</script>
+
+<script>
+  // Accessibility: ensure the inline size-chart image has alt text
+  (function(){
+    const img = document.querySelector('section#ukuran img');
+    if(img && !img.hasAttribute('alt')){
+      img.setAttribute('alt', 'Tabel ukuran — preview');
+    }
   })();
 </script>
 
